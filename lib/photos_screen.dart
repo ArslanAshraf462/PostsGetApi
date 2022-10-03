@@ -12,7 +12,10 @@ class PhotoScreen extends StatefulWidget {
 
 class _PhotoScreenState extends State<PhotoScreen> {
 
-  List<Photos> photosList = [];
+  List<Photos> _photosList = [];
+  List<Photos> get photosList{
+    return _photosList;
+  }
   Future<List<Photos>> getPhotos() async{
     final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'), 
     headers: {
